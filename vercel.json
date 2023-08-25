@@ -1,12 +1,17 @@
 {
-  "build": {
-    "commands": [
-      {
-        "command": "npx prisma generate"
-      },
-      {
-        "command": "npm run build"
-      }
+    "builds": [
+        {
+            "use": "@vercel/node",
+            "src": ".",
+            "config": {
+                "command": "npx prisma generate && npm run build"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "pages/index.tsx"
+        }
     ]
-  }
 }
