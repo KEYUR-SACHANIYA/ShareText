@@ -1,0 +1,12 @@
+{
+  "build": {
+    "commands": [
+      {
+        "command": "npx prisma generate"
+      },
+      {
+        "command": "npm run build"
+      }
+    ]
+  }
+}
